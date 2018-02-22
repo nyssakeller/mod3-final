@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
 import { houseReducer } from './houseReducer';
-import { setMemberReducer } from './setMemberReducer.js';
+import { setMemberReducer, setMembersObj } from './setMemberReducer.js';
 
 const rootReducer = combineReducers({
   houses: houseReducer,
-  memberIds: setMemberReducer 
+  memberIds: setMemberReducer,
+  members: setMembersObj
 });
 
 

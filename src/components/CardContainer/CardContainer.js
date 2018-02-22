@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import Card from '../Card/Card.js';
 
 export class CardContainer extends Component  {
-  handleClick = (e) => {
-    console.log(e);
+  handleClick = () => {
+    const { members } = this.props;
+    console.log(Card.house);
   }
   
   render () {
@@ -13,6 +14,7 @@ export class CardContainer extends Component  {
       console.log(Card);
       return (
         <Card 
+          house={house}
           name={house.name} 
           founded={house.founded}
           seats={house.seats}
@@ -35,7 +37,8 @@ export class CardContainer extends Component  {
 };
 
 export const mapStateToProps = store => ({
-  houses: store.houses
+  houses: store.houses,
+  members: store.members
 });
 
 export default connect(mapStateToProps)(CardContainer);

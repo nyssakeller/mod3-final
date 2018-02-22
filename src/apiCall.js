@@ -11,11 +11,10 @@ export const fetchApi = async() => {
 export const getMembers = async(id) => {
   const getMembers = await fetch(`https://www.anapioficeandfire.com/api/characters/${id}`, {
     method: 'GET',
-
     headers: {
       'Content-Type': 'application/json'
     }
-})
+  });
 
   // const data = await getMembers.json();
 
