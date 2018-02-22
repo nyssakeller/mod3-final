@@ -21,3 +21,19 @@ describe('setHouses', () => {
   });
 
 });
+
+describe('setMembers', () => {
+
+  it('return a type of HOUSE_DATA with houseData array', () => {
+    const members = undefined;
+    const house = [{name: 'name'}];
+    const expected = {
+      type: 'SET_MEMBERS',
+      house,
+      members
+    };
+
+    expect(expected).toEqual(actions.setMembers(house, members));    
+  });
+
+});
