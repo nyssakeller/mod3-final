@@ -9,11 +9,11 @@ describe('houseReducer', () => {
   });
 
   it('return new state', () => {
-    const expected = [{
-      name: 'name'
-    }];
+    const members = undefined;
+    const house = [{name: 'name'}];
+    const expected = [{house, members}];
 
-    expect(setMembersObj(undefined, setMembers(...expected))).toEqual(expected);
+    expect(setMembersObj(undefined, setMembers(expected))).toEqual(expected);
   });
 
 });
