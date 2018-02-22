@@ -21,3 +21,17 @@ describe('setHouses', () => {
   });
 
 });
+
+describe('setMembers', () => {
+
+  it('return a type of HOUSE_DATA with houseData array', () => {
+    const members = [{name: 'name'}];
+    const expected = {
+      type: 'SET_MEMBERS',
+      members
+    };
+
+    expect(expected).toEqual(actions.setMembers(members));    
+  });
+
+});

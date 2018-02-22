@@ -8,8 +8,8 @@ export const fetchApi = async() => {
   }
 };
 
-export const getMembers = async(id) => {
-  const getMembers = await fetch(`https://www.anapioficeandfire.com/api/characters/${id}`, {
+export const getMembers = async(url) => {
+  const getMembers = await fetch(url, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'

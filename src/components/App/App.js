@@ -3,7 +3,7 @@ import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { setHouses, setMemberIds, setMembers } from '../../actions';
+import { setHouses, setMembers } from '../../actions';
 import {fetchApi, getMembers} from '../../apiCall.js';
 import CardContainer from '../CardContainer/CardContainer.js';
 
@@ -17,20 +17,11 @@ class App extends Component {
   }
 
   getMemberId = async() => {
-    // const ids = this.props.houses.map(house => {
-    //   return house.swornMembers.map(member => member.split('characters/')[1]);
-    // });
-    // this.props.setMemberIds(ids);
-    
-    // this.props.memberIds.forEach(ids => {
-    //   ids.forEach(async id => {
-    //     const member = await getMembers(id);
-    //     await this.props.setMembers(member);
-    //   });
-    // });
-   this.props.houses.reduce((arr, house) => {
-    console.log(house);
-   });
+    this.props.houses.forEach(async house => {
+      await house.swornMembers.forEach(async member => {
+        this.props.setMembers(await getMembers(member));
+      }) 
+    });
   }
   
   render() {
@@ -55,13 +46,11 @@ App.propTypes = {
 };
 
 export const mapStateToProps = store => ({
-  houses: store.houses, 
-  memberIds: store.memberIds
+  houses: store.houses
 });
 
 export const mapDispatchToProps = dispatch => ({ 
   setHouses: houseData => dispatch(setHouses(houseData)),
-  setMemberIds: memberIds => dispatch(setMemberIds(memberIds)),
   setMembers: members => dispatch(setMembers(members))
 });
 
