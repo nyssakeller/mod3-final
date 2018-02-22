@@ -14,6 +14,9 @@ export class CardContainer extends Component  {
           founded={house.founded}
           seats={house.seats}
           titles={house.titles}
+          coatOfArms={house.coatOfArms}
+          ancestralWeapons={house.ancestralWeapons}
+          words={house.words}
           key={i}/>
 
       );
