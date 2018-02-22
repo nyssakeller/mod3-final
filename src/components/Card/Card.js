@@ -12,7 +12,7 @@ const Card = ({ name, founded,  seats, titles, coatOfArms, ancestralWeapons, wor
       <p>Coat of Arms: {coatOfArms}</p>
       <p>Ancestral Weapons: {ancestralWeapons}</p>
       <p>Words: {words}</p>
-      <p>Sworn Members: {swornMembers}</p>
+      <p display='none'>Sworn Members: {swornMembers}</p>
     </div>
   );
 };

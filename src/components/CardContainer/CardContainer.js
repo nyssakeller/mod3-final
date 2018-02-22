@@ -3,13 +3,18 @@ import { connect } from 'react-redux';
 import Card from '../Card/Card.js';
 
 export class CardContainer extends Component  {
-  handleClick = () => {
-
+  handleClick = (e) => {
+    let display = 'display';
   }
   
   render () {
     const { houses, members } = this.props;
     const memberNames = members.map(member => member.name);
+    // houses.reduce((obj, house) => {
+    //   !obj[house] ? obj[house] = [] : null;
+    //   const match = members.filter(member => member.url === house.swornMembers[0].url);
+    //   console.log(match)
+    // }, {});
 
     const rendered =  houses.map((house, i)=> {
       
