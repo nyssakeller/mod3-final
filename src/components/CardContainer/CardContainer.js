@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import Card from '../Card/Card.js';
 
 export class CardContainer extends Component  {
+  handleClick = (e) => {
+    console.log(e.target.value);
+  }
   
   render () {
     const { houses } = this.props;
-
     const rendered =  houses.map((house, i)=> {
       return (
         <Card 
@@ -17,8 +19,8 @@ export class CardContainer extends Component  {
           coatOfArms={house.coatOfArms}
           ancestralWeapons={house.ancestralWeapons}
           words={house.words}
-          key={i}/>
-
+          key={i} 
+          onClick={()=>this.handleClick()}/>
       );
     });
 

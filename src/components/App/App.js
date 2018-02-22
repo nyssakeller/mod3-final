@@ -8,10 +8,12 @@ import fetchApi from '../../apiCall.js';
 import CardContainer from '../CardContainer/CardContainer.js';
 
 class App extends Component {
+
   componentDidMount = async() => {
     const houseData = await fetchApi();
     this.props.setHouses(houseData);
   }
+  
   render() {
     return (
       <div className='App'>
@@ -39,4 +41,5 @@ App.propTypes = {
 export const mapDispatchToProps = dispatch => ({ 
   setHouses: houseData => dispatch(setHouses(houseData))
 });
+
 export default connect(null, mapDispatchToProps)(App);
