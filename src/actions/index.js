@@ -1,1 +1,4 @@
-export const fakeAction = () => ({type: 'FAKE'});
+export const setHouses = (houseData) => ({
+  type: 'HOUSE_DATA',
+  houseData
+});
