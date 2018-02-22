@@ -4,7 +4,7 @@ const Card = ({ name, founded,  seats, titles, coatOfArms, ancestralWeapons, wor
   founded === '' ? founded = 'N/A' : null;
 
   return (
-    <div onClick={(e) => onClick(e)}>
+    <div className={`${name}`}onClick={(e) => onClick(e)}>
       <h1>{name}</h1>
       <h2>Founded: {founded}</h2>
       <p>Seats: {seats}</p>
@@ -12,7 +12,7 @@ const Card = ({ name, founded,  seats, titles, coatOfArms, ancestralWeapons, wor
       <p>Coat of Arms: {coatOfArms}</p>
       <p>Ancestral Weapons: {ancestralWeapons}</p>
       <p>Words: {words}</p>
-      <p display='none'>Sworn Members: {swornMembers}</p>
+      <p className='members ${}'>Sworn Members: {swornMembers}</p>
     </div>
   );
 };

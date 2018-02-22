@@ -11,17 +11,7 @@ class App extends Component {
 
   componentDidMount = async() => {
     const houseData = await fetchApi();
-    //getMembers();
     this.props.setHouses(houseData);
-    this.getMemberId();
-  }
-
-  getMemberId = async() => {
-    this.props.houses.forEach(async house => {
-      await house.swornMembers.forEach(async member => {
-        this.props.setMembers(await getMembers(member));
-      }) 
-    });
   }
   
   render() {

@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {getMembers} from '../../apiCall.js';
 import Card from '../Card/Card.js';
 
 export class CardContainer extends Component  {
   handleClick = (e) => {
-    let display = 'display';
+    const match = this.props.houses.find(house => house.name === e.target.parentElement.className);
+    this.getMembersForHouse(match);
+  }
+
+  getMembersForHouse = async(house) => {
+    console.log(house);
+    house.swornMembers.forEach(async member => {
+      console.log(member)
+      this.props.setMembers(house, await getMembers(member));
+    });   
   }
   
   render () {
     const { houses, members } = this.props;
     const memberNames = members.map(member => member.name);
-    // houses.reduce((obj, house) => {
-    //   !obj[house] ? obj[house] = [] : null;
-    //   const match = members.filter(member => member.url === house.swornMembers[0].url);
-    //   console.log(match)
-    // }, {});
 
     const rendered =  houses.map((house, i)=> {
       

@@ -3,8 +3,9 @@ export const setHouses = (houseData) => ({
   houseData
 });
 
-export const setMembers = members => ({
+export const setMembers = (house, members) => ({
   type: 'SET_MEMBERS',
+  house,
   members
 });
 
