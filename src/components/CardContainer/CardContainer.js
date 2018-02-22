@@ -4,7 +4,7 @@ import Card from '../Card/Card.js';
 
 export class CardContainer extends Component  {
   handleClick = (e) => {
-    console.log(e.target.parentElement);
+    console.log(e);
   }
   
   render () {
@@ -20,6 +20,7 @@ export class CardContainer extends Component  {
           coatOfArms={house.coatOfArms}
           ancestralWeapons={house.ancestralWeapons}
           words={house.words}
+          swornMembers={house.swornMembers}
           key={i} 
           onClick={(e) => this.handleClick(e)}/>
       );
