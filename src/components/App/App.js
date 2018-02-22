@@ -36,7 +36,7 @@ App.propTypes = {
 };
 
 //const mapStateToProps = ({ fake }) => ({ fake });
-const mapDispatchToProps = dispatch => ({ 
+export const mapDispatchToProps = dispatch => ({ 
   setHouses: houseData => dispatch(setHouses(houseData))
 });
 export default connect(null, mapDispatchToProps)(App);
