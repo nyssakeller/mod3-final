@@ -5,6 +5,8 @@ import './App.css';
 import { connect } from 'react-redux';
 import { setHouses } from '../../actions';
 import fetchApi from '../../apiCall.js';
+import CardContainer from '../CardContainer/CardContainer.js';
+
 class App extends Component {
   componentDidMount = async() => {
     const houseData = await fetchApi();
@@ -22,6 +24,7 @@ class App extends Component {
           }}> FAKE ACTION</button> */}
         </div>
         <div className='Display-info'>
+          <CardContainer />
         </div>
       </div>
     );
