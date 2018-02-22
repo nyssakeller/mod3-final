@@ -1,4 +1,3 @@
-// import * as actions from '../actions/index.js';
 import { setHouses } from '../actions/index.js';
 import { houseReducer } from './houseReducer.js';
 
