@@ -13,6 +13,10 @@ class App extends Component {
     const houseData = await fetchApi();
     this.props.setHouses(houseData);
   }
+
+  handleClick =() => {
+    console.log('hi')
+  }
   
   render() {
     return (
@@ -20,13 +24,11 @@ class App extends Component {
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
-          {/* <button onClick={() => {
-           this.props.fakeAction();
-            alert(this.props.fake);
-          }}> FAKE ACTION</button> */}
+          {/* <button onClick={this.handleClick}
+          ></button> */}
         </div>
         <div className='Display-info'>
-          <CardContainer />
+          <CardContainer onClick={this.handleClick}/>
         </div>
       </div>
     );

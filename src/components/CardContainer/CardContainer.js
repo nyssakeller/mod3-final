@@ -4,12 +4,13 @@ import Card from '../Card/Card.js';
 
 export class CardContainer extends Component  {
   handleClick = (e) => {
-    console.log(e.target.value);
+    console.log(e.target.parentElement);
   }
   
   render () {
     const { houses } = this.props;
     const rendered =  houses.map((house, i)=> {
+      console.log(Card);
       return (
         <Card 
           name={house.name} 
@@ -20,7 +21,7 @@ export class CardContainer extends Component  {
           ancestralWeapons={house.ancestralWeapons}
           words={house.words}
           key={i} 
-          onClick={()=>this.handleClick()}/>
+          onClick={(e) => this.handleClick(e)}/>
       );
     });
 

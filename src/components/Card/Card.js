@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Card = ({ name, founded,  seats, titles, coatOfArms, ancestralWeapons, words }) => {
+const Card = ({ name, founded,  seats, titles, coatOfArms, ancestralWeapons, words, onClick }) => {
   founded === '' ? founded = 'N/A' : null;
   
   return (
-    <div>
+    <div onClick={(e) => onClick(e)}>
       <h1>{name}</h1>
       <h2>Founded: {founded}</h2>
       <p>Seats: {seats}</p>
