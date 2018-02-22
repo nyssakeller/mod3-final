@@ -28,4 +28,16 @@ describe('fetchApi', () => {
     expect(window.fetch).toHaveBeenCalled();
   });
 
+  it('throw new error', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+      status: 404
+    }));
+  });
+
+  try {
+    window.fetch;
+  } catch (err) {
+    expect(err).toEqual('error');
+  }
+
 });
