@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Card = ({ name, founded,  seats, titles, coatOfArms, ancestralWeapons, words, onClick }) => {
+const Card = ({ name, founded,  seats, titles, coatOfArms, ancestralWeapons, words, swornMembers, onClick }) => {
   founded === '' ? founded = 'N/A' : null;
-  
+
   return (
     <div onClick={(e) => onClick(e)}>
       <h1>{name}</h1>
@@ -12,6 +12,7 @@ const Card = ({ name, founded,  seats, titles, coatOfArms, ancestralWeapons, wor
       <p>Coat of Arms: {coatOfArms}</p>
       <p>Ancestral Weapons: {ancestralWeapons}</p>
       <p>Words: {words}</p>
+      <p>Sworn Members: {swornMembers}</p>
     </div>
   );
 };

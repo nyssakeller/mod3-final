@@ -17,18 +17,20 @@ class App extends Component {
   }
 
   getMemberId = async() => {
-    const ids = this.props.houses.map(house => {
-      return house.swornMembers.map(member => member.split('characters/')[1]);
-    });
-    this.props.setMemberIds(ids);
+    // const ids = this.props.houses.map(house => {
+    //   return house.swornMembers.map(member => member.split('characters/')[1]);
+    // });
+    // this.props.setMemberIds(ids);
     
-    this.props.memberIds.forEach(ids => {
-      ids.forEach(async id => {
-        const member = await getMembers(id);
-        await this.props.setMembers(member);
-      });
-    });
-   
+    // this.props.memberIds.forEach(ids => {
+    //   ids.forEach(async id => {
+    //     const member = await getMembers(id);
+    //     await this.props.setMembers(member);
+    //   });
+    // });
+   this.props.houses.reduce((arr, house) => {
+    console.log(house);
+   });
   }
   
   render() {
